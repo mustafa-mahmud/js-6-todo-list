@@ -10,6 +10,126 @@ html {
 	font-size: 62.5%;
 }
 
-html {
+body {
 	background-color: #666;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+}
+
+.container {
+	width: 50rem;
+
+	.add {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		position: relative;
+
+		input {
+			background-color: #fff;
+			color: #333;
+			border: 0;
+			outline: 0;
+			padding: 1rem 2rem;
+			font-size: 1.5rem;
+			line-height: 2.5rem;
+			width: 50rem;
+		}
+
+		span {
+			font-size: 3.5rem;
+			position: absolute;
+			right: -1.8rem;
+			top: 5px;
+		}
+	}
+
+	.content {
+		margin-top: 3rem;
+
+		.note {
+			background-color: #fff;
+			font-size: 1.5rem;
+			margin-bottom: 2rem;
+			border-left: 5px solid green;
+			box-shadow: 2px 2px 5px 2px rgba($color: #000000, $alpha: 0.6);
+
+			.info {
+				background-color: #000;
+				padding: 0.5rem 1rem;
+				color: #fff;
+				display: flex;
+				align-items: center;
+
+
+				.date {
+					font-size: 1rem;
+					text-transform: capitalize;
+					letter-spacing: 1.5px;
+					font-style: italic;
+				}
+
+				.edit {
+					margin-left: auto;
+					color: #217c21;
+					cursor: pointer;
+				}
+
+				.del {
+					margin-left: 1rem;
+					color: #ff0000;
+					cursor: pointer;
+				}
+			}
+
+			.text {
+				padding: 1rem;
+				font-size: 1.8rem;
+			}
+		}
+
+		.note.editing {
+			border-left: 5px solid #f00 !important;
+		}
+	}
+}
+
+.err {
+	position: absolute;
+	left: 1rem;
+	bottom: 1rem;
+	padding: 1rem;
+	font-size: 1.5rem;
+	font-style: italic;
+	background-color: #217c21;
+	opacity: 0;
+	transform: translateY(2rem);
+	letter-spacing: 1.5px;
+	color: #fff;
+	transition: all 0.3s;
+}
+
+.err.wrong {
+	background-color: #ff0000;
+	transform: translateY(0);
+	opacity: 1;
+}
+
+.err.success {
+	background-color: #217c21;
+	transform: translateY(0);
+	opacity: 1;
+}
+
+.done {
+	box-shadow: none !important;
+	opacity: 0.5 !important;
+
+	p.text {
+		text-decoration: line-through !important;
+	}
 }
